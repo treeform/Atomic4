@@ -16,80 +16,86 @@ For User:  The shell has 7 commands
 
 
 -------------------------------------------
-Load [Sector] loads the sector
 
-Save [Sector] saves the sector
+# Commands:
 
-Edit lets you input the sector
-
-Type lets you display what you loaded
-
-Run runs the program that was loaded
-
-New Allocates new memory
-
-Mem displays the memory table
-
-Up goes to the next allocated page.
+* `Load` #Sector loads the sector
+* `Save` #Sector saves the sector
+* `Edit` lets you input the sector
+* `Type` lets you display what you loaded
+* `Run` runs the program that was loaded
+* `New` Allocates new memory
+* `Mem` displays the memory table
+* `Up` goes to the next allocated page.
 -------------------------------------------
+
+# Tutorial:
 
 Hands on: Ok you started the OS here is a little guide.
 
-Type: Load 0
+Type: `Load 0`
 
 You have loaded the boot sector where the os is
 
-Type "Type" (it does not display well because it is not text the first 0 encountered makes stops the printing )
+Type `Type` (it does not display well because it is not text the first 0 encountered makes stops the printing )
 
-Type: Load 1
+Type: `Load 1`
 
 You have loaded the help file
 
 Type again and it shows you the help file
 
-Now type Edit
+Now type `Edit`
 
 Then type a little note for yourself (Like: " I wrote this")
 
-After you finish, Save it by typing Save 500
+After you finish, Save it by typing `Save 500`
 
 For our 500 - any number will do as long as it is > 10 (because System files are at 0-10)
 
-Now load the boot sector again (Load 0)
+Now load the boot sector again (`Load 0`)
 
-Now load Sector 500
+Now load sector `Load 500`
 
 Type and You must see your little note!
 
 Now how about run a program
 
 Let choose the clock
-Type Load 2
+Type `Load 2`
 
 Now you have loaded system clock written by Asko
 
-Type in Run
+Type in `Run`
 
 Now you see the time in the corner of the monitor
 
 Now let's do the calculator!
 
-Load 4
+`Load 4`
 
-Type the little help file
+`Type` the little help file
 
-Load 3 the calculator it self
+`Load 3` the calculator it self
 
-Run it
+`Run` it
 
 Type something like 2-2-2-2-2-2-2-2-2 and it will tell you that it is -16.
 
-Use x for exit
+Use `x` for exit
 
 Now the debugger
 
-Load 5 and run
+`Load 5` and run
 
 Use it at your will.
 
 That's it on the OS. This OS is a joke right? Fits on a boot sector, files that are sectors, help files like they really mean anything, and tiny Os in a big Os developing community with many realities...
+
+----------------------------------
+
+To run this with bochs:
+
+```
+bochs.exe 'boot:floppy' 'floppya: 1_44=boot.img, status=inserted'
+```
